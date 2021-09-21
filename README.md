@@ -1,6 +1,3 @@
 # hello world
 
-new lind string
-
-Line added from web
-
+> Всем привет, меня зовут Сергей и я нуб
