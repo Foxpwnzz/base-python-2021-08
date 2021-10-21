@@ -3,32 +3,31 @@
 Функции и структуры данных
 """
 
-def power_numbers(list):
+def power_numbers(pnumbers):
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
-    return [x * x for x in list]
+    return [x * x for x in pnumbers]
 
-my_list = [1,2,5,7]
-print(power_numbers(my_list))
+print(power_numbers([1,2,5,7]))
 
 #  filter types
 ODD = "odd"
 EVEN = "even"
 PRIME = "prime"
-out_ls = []
-def prime_numbers(args):
+
+def prime_numbers(numbers):
         k = 0
-        for n in range(1, args + 1):
-            if args % n == 0:
+        for n in range(1, numbers + 1):
+            if numbers % n == 0:
                 k += 1
         if k == 2:
-            return args
+            return numbers
 
-def filter_numbers(ls, args):
+def filter_numbers(fnum, numbers):
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
@@ -38,15 +37,15 @@ def filter_numbers(ls, args):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    if args == ODD:
-        return [x for x in ls if x % 2 != 0]
-    elif args == EVEN:
-        return [x for x in ls if x % 2 == 0]
-    elif args == PRIME:
-        ls_prime = list(filter(prime_numbers, ls))
+    if numbers == ODD:
+        return [x for x in fnum if x % 2 != 0]
+    elif numbers == EVEN:
+        return [x for x in fnum if x % 2 == 0]
+    elif numbers == PRIME:
+        ls_prime = list(filter(prime_numbers, fnum))
         return ls_prime
 
-ls_range = range(20)
-print(filter_numbers(ls_range, ODD))
-print(filter_numbers(ls_range, EVEN))
-print(filter_numbers(ls_range, PRIME))
+
+print(filter_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9], ODD))
+print(filter_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9], EVEN))
+print(filter_numbers([1, 2, 3, 4, 5, 6, 7, 8, 9], PRIME))
