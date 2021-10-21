@@ -3,14 +3,17 @@
 Функции и структуры данных
 """
 
-def power_numbers(*args):
+def power_numbers(list):
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
     >>> power_numbers(1, 2, 5, 7)
     <<< [1, 4, 25, 49]
     """
-    return [x * x for x in args]
+    return [x * x for x in list]
+
+my_list = [1,2,5,7]
+print(power_numbers(my_list))
 
 #  filter types
 ODD = "odd"
@@ -42,3 +45,8 @@ def filter_numbers(ls, args):
     elif args == PRIME:
         ls_prime = list(filter(prime_numbers, ls))
         return ls_prime
+
+ls_range = range(20)
+print(filter_numbers(ls_range, ODD))
+print(filter_numbers(ls_range, EVEN))
+print(filter_numbers(ls_range, PRIME))
